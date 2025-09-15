@@ -20,24 +20,19 @@ class ResultManagementSystem:
         self.root.grid_columnconfigure(0, weight=1)
 
         title = Label(
-            self.root, text="Student Result Management",
-            font=("goudy old style", 22, "bold"),
-            bg="#0f4d7d", fg="white", padx=20 )
-        title.grid(row=0, column=0, sticky="ew")
+            self.root, text="Student Result Management",font=("goudy old style", 22, "bold"),bg="#0f4d7d", fg="white", padx=20 ) title.grid(row=0, column=0, sticky="ew")
 
         mbar = Frame(self.root, bd=2, relief=RIDGE, bg="white")
         mbar.grid(row=1, column=0, sticky="ew", padx=8, pady=(6, 4))
         for i in range(6):
             mbar.grid_columnconfigure(i, weight=1)  # even spacing
 
-        btn_course  = Button(mbar, text="Course", font=("goudy old style", 14, "bold"),bg="blue", fg="white", cursor="hand2",
-        command=self.open_course)
+        btn_course  = Button(mbar, text="Course", font=("goudy old style", 14, "bold"),bg="blue", fg="white", cursor="hand2",command=self.open_course)
         btn_student = Button(mbar, text="Student", font=("goudy old style", 14, "bold"),bg="blue", fg="white", cursor="hand2",
         command=self.open_student)
         btn_result  = Button(mbar, text="Result", font=("goudy old style", 14, "bold"),bg="blue", fg="white", cursor="hand2",
         command=self.open_result)
-        btn_view    = Button(mbar, text="View Student Result", font=("goudy old style", 14, "bold"),bg="blue", fg="white", cursor="hand2",
-     command=self.open_view_result)
+        btn_view    = Button(mbar, text="View Student Result", font=("goudy old style", 14, "bold"),bg="blue", fg="white", cursor="hand2", command=self.open_view_result)
         btn_logout  = Button(mbar, text="Logout", font=("goudy old style", 14, "bold"),bg="blue", fg="white", cursor="hand2",
         command=self.logout)
         btn_exit    = Button(mbar, text="Exit", font=("goudy old style", 14, "bold"),bg="blue", fg="white", cursor="hand2",
@@ -85,8 +80,7 @@ class ResultManagementSystem:
 
         footer = Label(self.root,
                        text="Contact Me: shubhamkumbhar45660@gmail.com",
-                       font=("goudy old style", 12), bg="#262626", fg="white")
-        footer.grid(row=3, column=0, sticky="ew")
+                       font=("goudy old style", 12), bg="#262626", fg="white")footer.grid(row=3, column=0, sticky="ew")
 
         self.update_counts()
 
@@ -159,3 +153,4 @@ if __name__ == "__main__":
     root = Tk()
     app = ResultManagementSystem(root)
     root.mainloop()
+

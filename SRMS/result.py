@@ -59,35 +59,11 @@ class ResultClass:
     def create_tables(self):
         con, cur = self.create_connection()
 
-        cur.execute("""
-        CREATE TABLE IF NOT EXISTS student (
-            roll TEXT PRIMARY KEY,
-            name TEXT,
-            course TEXT
-        )
-        """)
+        cur.execute("""CREATE TABLE IF NOT EXISTS student ( roll TEXT PRIMARY KEY, name TEXT, course TEXT)""")
 
-        cur.execute("""
-        CREATE TABLE IF NOT EXISTS course (
-            cid INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT UNIQUE NOT NULL,
-            duration TEXT NOT NULL,
-            charges TEXT NOT NULL,
-            description TEXT
-        )
-        """)
+        cur.execute("""CREATE TABLE IF NOT EXISTS course (cid INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE NOT NULL,duration TEXT NOT NULL,charges TEXT NOT NULL,description TEXT)  """)
 
-        cur.execute("""
-        CREATE TABLE IF NOT EXISTS result (
-            rid INTEGER PRIMARY KEY AUTOINCREMENT,
-            roll TEXT,
-            name TEXT,
-            course TEXT,
-            marks_obtain TEXT,
-            full_marks TEXT,
-            percentage TEXT
-        )
-        """)
+        cur.execute("""CREATE TABLE IF NOT EXISTS result (rid INTEGER PRIMARY KEY AUTOINCREMENT, roll TEXT,name TEXT,course TEXT,marks_obtain TEXT,full_marks TEXT,percentage TEXT )""")
 
         con.commit()
         con.close()
@@ -152,3 +128,4 @@ if __name__ == "__main__":
     root = Tk()
     obj = ResultClass(root)
     root.mainloop()
+

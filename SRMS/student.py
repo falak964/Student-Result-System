@@ -97,16 +97,7 @@ class StudentClass:
     def create_db(self):
         con = sqlite3.connect("srms.db")
         cur = con.cursor()
-        cur.execute("""
-        CREATE TABLE IF NOT EXISTS student (
-            roll TEXT PRIMARY KEY,
-            name TEXT,
-            email TEXT,
-            gender TEXT,
-            contact TEXT,
-            dob TEXT
-        )
-        """)
+        cur.execute(""" CREATE TABLE IF NOT EXISTS student (roll TEXT PRIMARY KEY,name TEXT,email TEXT,gender TEXT,contact TEXT,dob TEXT ) """)
         con.commit()
         con.close()
 
@@ -206,3 +197,4 @@ if __name__ == "__main__":
     root = Tk()
     obj = StudentClass(root)
     root.mainloop()
+

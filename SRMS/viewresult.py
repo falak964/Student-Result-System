@@ -50,17 +50,7 @@ class ViewClass:
         """Ensure the database and required tables exist."""
         conn = sqlite3.connect(database="ResultManagementSystem.db")
         cur = conn.cursor()
-        cur.execute("""
-            CREATE TABLE IF NOT EXISTS result (
-                rid INTEGER PRIMARY KEY AUTOINCREMENT,
-                roll TEXT,
-                name TEXT,
-                course TEXT,
-                marks_obtain TEXT,
-                full_marks TEXT,
-                percentage TEXT
-            )
-        """)
+        cur.execute(""" CREATE TABLE IF NOT EXISTS result (rid INTEGER PRIMARY KEY AUTOINCREMENT,roll TEXT,name TEXT,course TEXT,marks_obtain TEXT,full_marks TEXT,percentage TEXT )""")
         conn.commit()
         conn.close()
 
@@ -121,3 +111,4 @@ if __name__ == "__main__":
     home = Tk()
     obj = ViewClass(home)
     home.mainloop()
+

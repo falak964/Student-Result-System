@@ -95,7 +95,7 @@ class Login:
             try:
                 conn=sqlite3.connect(database="ResultManagementSystem.db")
                 cur=conn.cursor()
-                cur.execute("Select * from AllUsers where email=?",(self.txt_user.get(),))#Selecting AllUsers Database i.e.(Those Who Sign Up)
+                cur.execute("Select * from AllUsers where email=?",(self.txt_user.get(),))
                 row=cur.fetchone()
                 if row==None:
                     messagebox.showerror("Error","Please Enter Valid Email address to reset your password",parent=self.home)
@@ -166,4 +166,5 @@ class Login:
 
 home=Tk()
 obj=Login(home)
+
 home.mainloop()
